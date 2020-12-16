@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr th:each="rel: ${session.Relationships}">
+    <td>
+    	
+    	<div th:each="user: ${session.users}">
+    	<label th:if="${rel.status==1 and user.uid==rel.userTwoIdd }" for="pend" th:text="${user.userName}"></label>
+    	<button id="pend"  th:if="${rel.status==1 and user.uid==rel.userTwoIdd }">Pending</button>
+    	<label th:if="${rel.status==0 and user.uid==rel.userTwoIdd }" for="add" th:text="${user.userName}"></label>
+    	<button id="add" th:if="${rel.status==0 and user.uid==rel.userTwoIdd } ">Add</button>
+    	</div>
+    </td> 
+    
+</tr>
+</table>
+
+<form th:action = "@{/logedIn}">
+<input hidden="true" name="userName" th:value ="${session.currentUser.userName}"/>
+<input hidden="true" name="password" th:value ="${session.currentUser.password}"/>
+	<button>Take me Home</button>
+</form>
+
+</body>
+</html>

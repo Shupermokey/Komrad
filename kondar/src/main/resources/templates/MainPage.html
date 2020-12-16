@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel = "stylesheet" media="" href="css/MainPage.css">
+<link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container h-100" >
+<div class="row h-100 justify-content-center align-items-center">
+<h1>Login</h1>
+<h2 th:value="${session.userName}"></h2>
+<h1 th:text="${CreateUserMessage}"></h1>
+<form class="col-12"  action="/logedIn" method = "POST">
+	<div class="d-flex h-50 justify-content-center">
+		<input class="form-control col-4 m-2" placeholder="Username" type="text" name="userName">
+		<input class="form-control col-4 m-2" placeholder="Password" type="password" name="password">
+		<input class="form-control col-2 m-2" type="submit">
+	</div>
+</form>
+<a href="createPage">Create User</a>
+</div>
+</div>
+</body>
+</html>

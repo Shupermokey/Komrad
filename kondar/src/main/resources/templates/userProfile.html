@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+<div class = "row border-dark w-50 float-left mt-3" style="background-color:green; border:black 1;">
+	<div class="col-xl-6" th:each="userPost: ${session.userPosts}">
+		<div th:text="${userPost.post}"></div>
+	</div>
+	
+</div>
+<div class = "row border-dark w-50 float-right mt-3 justify-content-center" style="background-color:blue; border:black 1;">
+	<div class="col-xl-12" >
+		<a style="text-decoration: none; color:inherit; text-align:center; line-height: 250px;" th:href="@{/feed}"><div style="height:300px;"><span style="font-size: 100px;">Feed</span></div></a>
+	</div>
+	
+</div>
+<div class = "row border-dark w-50 float-left mt-3" style="background-color:pink; border:black 1;">
+	<div class="col-xl-12" th:each="userPost: ${session.userPosts}">
+		<div th:text="${userPost.post}"></div>
+	</div>
+	
+</div>
+<div class = "row border-dark w-50 float-right mt-3" style="background-color:yellow; border:black 1;">
+	<div class="col-xl-6" th:each="userPost: ${session.userPosts}">
+		<div th:text="${userPost.post}"></div>
+	</div>
+	
+</div>
+
+</div>
+</body>
+</html>

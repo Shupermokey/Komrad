@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel = "stylesheet" media="" href="css/MainPage.css">
+<link href="webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insert title here</title>
+<h1>Create</h1>
+<h3 th:text = "${CreateUserMessage}"></h3>
+<form action="/createUser" method = "POST">
+
+<table>
+	<tr>
+		<td>User</td>
+		<td><input type="text" name="userName"></td>
+	</tr>
+	<tr><td>Pass</td>
+		<td><input type="password" name="password"></td></tr>
+</table>
+<input type="submit">
+</form>
+</body>
+</html>
